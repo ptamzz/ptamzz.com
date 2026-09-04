@@ -1,0 +1,33 @@
+/* Isolated presentation for the particle navigation control. Every rule is
+   scoped to the component so it can drop into any article without collisions. */
+
+.home-mark {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 58px;
+  height: 58px;
+  transform: translateX(-50%);
+}
+
+.home-mark .particle-mark {
+  display: block;
+  width: 58px;
+  height: 58px;
+  pointer-events: none;
+}
+
+.home-mark .particle-mark svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.home-mark .particle-mark canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

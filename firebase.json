@@ -1,10 +1,18 @@
 {
   "hosting": {
-    "public": "y",
+    "public": "v2/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "redirects": [
+      {
+        "source": "/essays",
+        "destination": "/essay",
+        "type": 301
+      }
     ]
   }
 }

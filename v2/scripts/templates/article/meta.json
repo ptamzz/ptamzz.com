@@ -1,0 +1,12 @@
+{
+  "slug": "{{slug}}",
+  "title": "{{title}}",
+  "date": "{{date}}",
+  "excerpt": "{{excerpt}}",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 35% 35%, #e9eef7 0, transparent 45%), linear-gradient(135deg, #f6f5f2, #eceff3)"
+  },
+  "navigation": "default",
+  "draft": false
+}

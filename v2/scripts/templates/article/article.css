@@ -1,0 +1,90 @@
+/* Presentation for this article only. Nothing here is shared, so edit or
+   replace it without affecting any other essay. */
+
+:root {
+  color-scheme: light;
+  --ink: #111;
+  --muted: #7d7d7d;
+  --page-width: 606px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Google Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  font-variation-settings: "GRAD" 60;
+}
+
+.page {
+  width: min(calc(100% - 40px), var(--page-width));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.article-header {
+  margin-bottom: 48px;
+}
+
+.article-header time {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.article-body {
+  max-width: 508px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.article-body p {
+  margin: 0 0 1.35em;
+}
+
+.article-body h2 {
+  margin: 3em 0 0.8em;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 48px;
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="But that’s not GenUI! An essay by Pritam Pebam on assigning generative authority across the design process."
+    />
+    <title>But that’s not GenUI! · Pritam Pebam</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,0..100;1,17..18,400..700,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/essay/but-thats-not-genui/article.css" />
+  </head>
+  <body>
+    <main class="page">
+      <article>
+        <header class="article-header">
+          <h1>But that’s not GenUI!</h1>
+          <time datetime="2026-08-28">August 28, 2026</time>
+        </header>
+
+        <div class="article-body">
+          <p>
+            AI can generate compelling interfaces, but it is not a reliable
+            designer yet. It struggles to sustain the intended craft bar, follow
+            strict interface rules, and is prone to a brand new category of
+            prompt injection that targets the Design itself.
+          </p>
+          <p>
+            An interface embodies multiple design decisions (eg. IA, hierarchy,
+            layout, composition, visual design etc.). Each of these decisions
+            can independently be generative or deterministic. For instance, AI
+            can generate the layout while the information architecture remains
+            deterministic.
+          </p>
+          <p>
+            Image generation already works this way. LoRAs, ControlNet,
+            segmented masks, identity preservation, all can constrain style,
+            pose, structure, or a specific aspect of the image while the final
+            image remains generative.
+          </p>
+          <p>
+            With GenUI, a <code>design.md</code> can constrain style, structured
+            determinism can lock specific content, UI forms &amp; shapes. These
+            constraints do not make the output less generative; they define
+            where generation has authority.
+          </p>
+
+          <h2>
+            The GenUI Authority Class defines how much authority AI has in the
+            GenUI pipeline
+          </h2>
+          <p>
+            From left to right, design authority shifts progressively from
+            humans to AI, with AI taking on more of the UI-generation pipeline
+            at each class. But more authority is not inherently better. The
+            right class is the one at which the system can consistently meet its
+            intended bar for craft, safety, and reliability—not necessarily the
+            highest class it can technically reach.
+          </p>
+          <p>
+            Today, our system may operate at C2. As models &amp; the harness
+            improves, we should expand the authority class deliberately, using
+            evaluations and explicit exit criteria to determine when the next
+            class is ready. Declaring the class establishes an operating
+            contract: what AI is trusted to decide today, what remains
+            constrained, and what evidence is required before that authority
+            expands.
+          </p>
+          <p>
+            GenUI is not about avoiding determinism. It is about assigning
+            generative authority deliberately across the design process—and
+            expanding that authority only where the system has earned it.
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

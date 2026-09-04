@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Best Design Tool Might Be One You Throw Away, an essay by Pritam Pebam."
+    />
+    <title>The Best Design Tool Might Be One You Throw Away · Pritam Pebam</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,0..100;1,17..18,400..700,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/essay/the-best-design-tool-might-be-one-you-throw-away/article.css" />
+  </head>
+  <body>
+    <main class="page">
+      <article>
+        <header class="article-header">
+          <h1>The Best Design Tool Might Be One You Throw Away</h1>
+          <time datetime="2026-09-04">September 4, 2026</time>
+        </header>
+
+        <div class="article-body">
+          <p>
+            The technology industry has always valued speed. With AI, that
+            pressure has intensified.
+          </p>
+          <p>
+            Designers are expected to explore faster, prototype faster, test
+            faster, and get to an answer faster. AI seems perfectly suited to
+            this moment: it can generate images, write code, produce
+            variations, summarize research, and turn an idea into something
+            tangible in minutes.
+          </p>
+          <p>But there is an uncomfortable tension underneath all of this.</p>
+          <p>Good design still takes time.</p>
+          <p>
+            Understanding a problem, noticing what others have missed,
+            exploring alternatives, testing assumptions, and exercising
+            judgment are not necessarily improved by doing them faster.
+            Sometimes they require the opposite: room to think.
+          </p>
+          <p>
+            So perhaps the most useful role for AI in design is not to
+            accelerate every part of the process.
+          </p>
+          <p>
+            Moving fast shouldn’t mean thinking faster. It should mean spending
+            less time on everything surrounding the thinking.
+          </p>
+          <p>
+            One surprisingly powerful way this is beginning to happen is
+            through a new class of tools: tools that are built for a specific
+            problem, used briefly, and then discarded.
+          </p>
+
+          <h2>Tools used to be products</h2>
+          <p>
+            Designers traditionally work inside a relatively stable set of
+            tools.
+          </p>
+          <p>
+            Figma. Sketch. Photoshop. After Effects. Unity. Whatever the
+            particular discipline requires.
+          </p>
+          <p>
+            When those tools don't quite do what we need, sometimes we build
+            our own. A design systems team might create a Figma plugin. A
+            prototyping team might create an internal application. A designer
+            with technical skills might write a script to automate part of a
+            workflow.
+          </p>
+          <p>
+            But historically, building even a small tool came with a certain
+            minimum investment.
+          </p>
+          <p>
+            If you were making something purely for yourself, that investment
+            often wasn't worth it. By the time you built enough of the tool for
+            it to be reliable, you might have been better off simply doing the
+            original task manually.
+          </p>
+          <p>
+            And once you had invested that much effort, there was an
+            understandable temptation to go further.
+          </p>
+          <p>
+            Make it reusable. Handle edge cases. Add a proper interface.
+            Document it. Distribute it. Support other users. Fix bugs. Maintain
+            compatibility as Figma, operating systems, or APIs change.
+          </p>
+          <p>A little utility starts becoming a product.</p>
+          <p>
+            That makes sense when software is expensive to produce. If building
+            the tool is the expensive part, you want to amortize that investment
+            across many uses and many people.
+          </p>
+          <p>AI is changing that equation.</p>
+
+          <h2>Sometimes you only need the tool once</h2>
+          <p>
+            Recently, I needed to migrate a large collection of UI designs from
+            one device size to another.
+          </p>
+          <p>
+            This wasn't simply a matter of scaling every frame by the same
+            percentage. Layouts needed to change. Typography needed adjustment.
+            Individual elements had to be resized according to a set of rules
+            specific to the two devices.
+          </p>
+          <p>Doing it manually would have taken days of repetitive work.</p>
+          <p>So instead, I built a Figma plugin.</p>
+          <p>
+            I described the transformation rules, used AI to help write the
+            code, tested it against the designs, corrected what didn't work,
+            and got it to the point where it could handle the migration.
+          </p>
+          <p>A task that could have consumed days became a couple of hours.</p>
+          <p>Then I stopped working on the plugin.</p>
+          <p>
+            It didn't need beautiful onboarding. It didn't need to support
+            arbitrary device sizes. It didn't need a settings architecture or
+            comprehensive error handling. It didn't need to be generalized for
+            every designer who might someday encounter a vaguely similar
+            problem.
+          </p>
+          <p>It had one job.</p>
+          <p>It did that job.</p>
+          <p>That was enough.</p>
+          <p>I've found myself doing this repeatedly.</p>
+          <p>
+            For a research study evaluating typeface legibility, we needed
+            multiple versions of the same set of interfaces rendered in roughly
+            twenty different typefaces. The important work was comparing the
+            typefaces: understanding what happened to legibility, hierarchy,
+            density, and the overall experience.
+          </p>
+          <p>
+            Duplicating the screens, replacing fonts, finding corresponding
+            weights, and making mechanical adjustments across every variation
+            was necessary work. But it wasn't where the design judgment was.
+          </p>
+          <p>So I made another tool.</p>
+          <p>
+            Start with a reference set of screens. Give the tool the typefaces
+            being evaluated. Select where the results should go. It generates
+            the variations and handles much of the repetitive transformation
+            automatically.
+          </p>
+          <p>
+            For another project, I needed to evaluate UI directly on a new kind
+            of device. There wasn't an established workflow for getting static
+            designs onto the hardware in the way I needed.
+          </p>
+          <p>
+            So I made a small Android app whose primary purpose was simply to
+            get those designs onto the device so I could look at them.
+          </p>
+          <p>None of these tools are particularly important on their own.</p>
+          <p>That is precisely what makes them interesting.</p>
+
+          <h2>Toolmaking is becoming part of designing</h2>
+          <p>
+            The usual story about AI and designers is that designers can now
+            code.
+          </p>
+          <p>
+            That's true, but it misses the more consequential change.
+          </p>
+          <p>
+            The important shift isn't simply that designers have acquired
+            another production skill. It is that the economics of making
+            software are changing enough that toolmaking itself can become a
+            routine part of the design process.
+          </p>
+          <p>Encounter a tedious transformation? Make a tool.</p>
+          <p>Need a strange research setup? Make a tool.</p>
+          <p>
+            Need to visualize data in a particular way for one exploration?
+            Make a tool.
+          </p>
+          <p>
+            Need to bridge two systems that were never intended to work
+            together? Make a tool.
+          </p>
+          <p>Then continue designing.</p>
+          <p>
+            We normally think of a design tool as infrastructure: something
+            relatively durable that exists before the work begins.
+          </p>
+          <p>
+            But tools can increasingly become ephemeral artifacts of the work
+            itself.
+          </p>
+          <p>
+            You identify friction, create a tiny piece of software to remove
+            it, use it, and move on.
+          </p>
+          <p>
+            In physical craft, this idea isn't unusual. A maker may build a jig
+            specifically to hold one piece at the right angle for one
+            operation. The jig doesn't need a business model. Nobody worries
+            about onboarding another million woodworkers. Its value comes from
+            helping make the thing that actually matters.
+          </p>
+          <p>AI makes that mentality increasingly viable in software.</p>
+
+          <h2>The value is not speed for its own sake</h2>
+          <p>
+            It would be easy to describe this simply as another productivity
+            gain.
+          </p>
+          <p>Something took three days. Now it takes two hours.</p>
+          <p>But I think that undersells what's happening.</p>
+          <p>In design, time is not interchangeable.</p>
+          <p>
+            An hour spent duplicating twenty Figma frames is not equivalent to
+            an hour spent looking at the results and realizing that your
+            hypothesis was wrong.
+          </p>
+          <p>
+            An afternoon resizing UI elements is not equivalent to an afternoon
+            exploring whether the interface should work differently in the
+            first place.
+          </p>
+          <p>
+            Both occupy the calendar. Only one may require the designer's
+            judgment.
+          </p>
+          <p>This matters as teams are pushed to move faster.</p>
+          <p>
+            There is a dangerous version of speed where the entire design
+            process gets compressed. Less exploration. Less research. Fewer
+            alternatives. Less time sitting with a difficult problem.
+          </p>
+          <p>
+            The result is technically faster design, but not necessarily better
+            design.
+          </p>
+          <p>Disposable tools offer another path.</p>
+          <p>
+            We shouldn't use AI to make every part of design faster. We should
+            use it to compress the parts that don't deserve our time.
+          </p>
+          <p>
+            That can give designers back some of the time that speed culture
+            has taken away.
+          </p>
+
+          <h2>A bad product can be an excellent tool</h2>
+          <p>
+            This also requires changing some instincts about what software is
+            supposed to be.
+          </p>
+          <p>Many disposable tools would be terrible products.</p>
+          <p>
+            They may contain assumptions that are specific to one project. They
+            might fail outside a narrow range of inputs. They may have crude
+            interfaces. They may not have automated tests, analytics,
+            documentation, extensibility, or a sensible architecture for future
+            development.
+          </p>
+          <p>
+            In conventional software development, these would all be warning
+            signs.
+          </p>
+          <p>
+            For a tool intended to exist for three hours, they might be
+            completely rational choices.
+          </p>
+          <p>
+            Production software has to survive users you don't know, contexts
+            you can't predict, and changes that haven't happened yet.
+          </p>
+          <p>
+            A disposable tool may know exactly who its user is, exactly what
+            data it will receive, and exactly what task it has to accomplish.
+          </p>
+          <p>That changes the standard.</p>
+          <p>The question isn't whether this is good software.</p>
+          <p>
+            The question is whether it gets you from the work you don't need to
+            be doing to the work you do.
+          </p>
+          <p>
+            AI isn't only making it cheaper to build good software. It is making
+            it reasonable to build software that was never meant to become a
+            product.
+          </p>
+
+          <h2>Knowing what not to automate</h2>
+          <p>There is an obvious trap here.</p>
+          <p>
+            If building tools becomes nearly frictionless, designers can start
+            automating everything.
+          </p>
+          <p>That would be a mistake.</p>
+          <p>Some apparently repetitive work contains information.</p>
+          <p>
+            Making several layouts by hand might expose a relationship you
+            hadn't noticed. Adjusting typography across different contexts
+            might develop intuition about the typeface itself. A messy manual
+            prototype can reveal something precisely because you're close to
+            the material.
+          </p>
+          <p>Automation can remove labor. It can also remove observation.</p>
+          <p>
+            So the emerging skill isn't simply knowing how to make disposable
+            tools.
+          </p>
+          <p>It's knowing which work should be disposable.</p>
+          <p>
+            Which parts of this process are consuming time without contributing
+            meaningful judgment?
+          </p>
+          <p>
+            Which activities should remain deliberately manual because doing
+            them is part of understanding the problem?
+          </p>
+          <p>
+            Where is consistency important, and where is exploration more
+            valuable?
+          </p>
+          <p>The answers won't be the same for every project.</p>
+          <p>That's why this isn't primarily a coding skill.</p>
+          <p>It's a design decision.</p>
+
+          <h2>Designing the tools around the work</h2>
+          <p>
+            For decades, designers have become proficient at adapting
+            themselves to their tools.
+          </p>
+          <p>
+            We learn their interaction models. Their constraints become part of
+            our process. We restructure work because a tool makes one thing easy
+            and another thing difficult.
+          </p>
+          <p>
+            AI introduces the possibility of reversing that relationship.
+          </p>
+          <p>
+            Instead of constantly shaping the work around the available tools,
+            we can increasingly shape temporary tools around the work.
+          </p>
+          <p>
+            Some will eventually prove broadly useful and deserve to become
+            real products.
+          </p>
+          <p>Most won't.</p>
+          <p>And that may be the point.</p>
+          <p>
+            The future design toolkit may not simply contain better versions of
+            Figma, After Effects, or whatever comes next. It may also contain
+            hundreds of tiny pieces of software that exist briefly, solve one
+            oddly specific problem, and disappear.
+          </p>
+          <p>They don't need roadmaps.</p>
+          <p>They don't need communities.</p>
+          <p>They don't even need names.</p>
+          <p>
+            They just need to give designers more time for the part of design
+            that remains stubbornly difficult to accelerate: thinking carefully
+            about what should be made.
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

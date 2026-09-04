@@ -1,0 +1,12 @@
+{
+  "slug": "the-best-design-tool-might-be-one-you-throw-away",
+  "title": "The Best Design Tool Might Be One You Throw Away",
+  "date": "2026-09-04",
+  "excerpt": "AI makes it practical to build narrowly focused tools, use them once, and discard them—giving designers more time for judgment.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 30% 35%, #f7d9e6 0, transparent 42%), linear-gradient(135deg, #f6f2ff, #e7edf7)"
+  },
+  "navigation": "default",
+  "draft": false
+}

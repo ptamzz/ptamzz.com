@@ -1,0 +1,19 @@
+{
+  "name": "pritam-pebam-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pritam Pebam's portfolio and essays",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "node scripts/clean.js",
+    "dev": "node scripts/build.js && node --watch server.js",
+    "new:essay": "node scripts/new-essay.js",
+    "start": "node scripts/build.js && node server.js",
+    "serve": "node server.js",
+    "test": "node --test \"test/**/*.test.js\"",
+    "validate:essays": "node scripts/validate-essays.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

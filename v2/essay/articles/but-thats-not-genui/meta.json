@@ -1,0 +1,12 @@
+{
+  "slug": "but-thats-not-genui",
+  "title": "But that’s not GenUI!",
+  "date": "2026-08-28",
+  "excerpt": "AI can generate compelling interfaces but is not yet a reliable designer. A way to assign generative authority deliberately, one design decision at a time.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 72% 30%, #dceee7 0, transparent 40%), linear-gradient(145deg, #f4f2e9, #e9edf1)"
+  },
+  "navigation": "default",
+  "draft": false
+}
