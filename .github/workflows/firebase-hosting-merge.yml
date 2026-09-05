@@ -1,0 +1,28 @@
+name: Deploy to Firebase Hosting on merge
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  deploy_live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # The published site is static today. Once the essay build lands on
+      # master, v2/package.json appears and the build runs automatically.
+      - name: Build site if it has a build step
+        run: |
+          if [ -f v2/package.json ]; then
+            npm run build --prefix v2
+          else
+            echo "No build step on this branch, deploying static files."
+          fi
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PTAMZZ }}'
+          projectId: ptamzz
+          channelId: live
