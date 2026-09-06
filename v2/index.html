@@ -26,8 +26,9 @@
     <style>
       :root {
         color-scheme: light;
-        --ink: #111;
-        --muted: #7d7d7d;
+        --ink: #050626;
+        --muted: #55566d;
+        --accent: #2b48e2;
         --page-width: 536px;
       }
 
@@ -41,7 +42,9 @@
 
       body {
         margin: 0;
-        background: #fff;
+        background: linear-gradient(180deg, #f3f4f9 0%, #eff0f6 100%);
+        /* Viewport-mapped so the wash reads the same on any page length. */
+        background-attachment: fixed;
         color: var(--ink);
         font-family: "Google Sans", Arial, Helvetica, sans-serif;
         font-size: 14px;
@@ -120,14 +123,14 @@
       }
 
       section {
-        margin-top: 38px;
+        margin-top: 48px;
         scroll-margin-top: 24px;
       }
 
       .section-label {
         margin: 0 0 10px;
-        color: var(--muted);
-        font-size: 14px;
+        color: var(--accent);
+        font-size: 16px;
         font-weight: 600;
       }
 
@@ -178,6 +181,10 @@
         color: var(--muted);
       }
 
+      .speaking-entries .entry > span:not(.entry-date) {
+        font-weight: 500;
+      }
+
       .patent {
         margin-bottom: 19px;
       }
@@ -222,7 +229,7 @@
       .patent h3 {
         margin: 0;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 500;
         font-variation-settings: "GRAD" 0;
         line-height: 1.4;
         transition: font-variation-settings 140ms ease;
@@ -339,7 +346,7 @@
         <section id="speaking">
           <h2 class="section-label">Speaking</h2>
           <div class="section-content">
-            <ul class="entries">
+            <ul class="entries speaking-entries">
               <li class="entry">
                 <span class="entry-date">2021</span>
                 <span>Adobe Design Mix Conference</span>
@@ -541,8 +548,8 @@
             const gradientPosition =
               (particle.baseX / bounds.width) * 0.65 +
               (particle.baseY / bounds.height) * 0.35;
-            const hue = 345 - gradientPosition * 55 + hueShift;
-            context.fillStyle = `hsla(${hue}, 72%, ${58 + lightShift}%, 0.54)`;
+            const hue = 236 - gradientPosition * 12 + hueShift;
+            context.fillStyle = `hsla(${hue}, 76%, ${53 + lightShift}%, 0.9)`;
             context.beginPath();
             context.arc(particle.x, particle.y, 1.5, 0, Math.PI * 2);
             context.fill();
