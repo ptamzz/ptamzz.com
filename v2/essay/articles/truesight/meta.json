@@ -1,0 +1,12 @@
+{
+  "slug": "truesight",
+  "title": "TrueSight: Simulating AR Displays for Design Evaluation",
+  "date": "2026-09-09",
+  "excerpt": "Design files can be precise representations of the wrong viewing condition. A Mac app that simulates AR display behaviour so visual decisions land before hardware.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 35% 35%, #e9eef7 0, transparent 45%), linear-gradient(135deg, #f6f5f2, #eceff3)"
+  },
+  "navigation": "default",
+  "draft": false
+}

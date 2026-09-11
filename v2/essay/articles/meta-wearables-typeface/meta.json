@@ -1,0 +1,12 @@
+{
+  "slug": "meta-wearables-typeface",
+  "title": "Developing a Typeface for AR Displays",
+  "date": "2026-09-09",
+  "excerpt": "On a waveguide display the rendered glyph, not the font outline, is the real artifact. How display artifacts became type requirements, and how Iris was made.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 35% 35%, #e9eef7 0, transparent 45%), linear-gradient(135deg, #f6f5f2, #eceff3)"
+  },
+  "navigation": "default",
+  "draft": false
+}

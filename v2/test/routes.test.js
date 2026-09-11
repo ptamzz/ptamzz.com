@@ -44,8 +44,8 @@ test("home, essay index, and every generated article route return 200", async ()
 test("shared and article-local assets are served", async () => {
   const assets = [
     "/essay/styles.css",
-    "/essay/particle-mark.css",
-    "/essay/particle-mark.js",
+    "/shared/particle-mark.css",
+    "/shared/particle-mark.js",
     ...result.essays.map((essay) => `${essay.href}/article.css`),
   ];
 

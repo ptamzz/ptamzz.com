@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Google Lens: Unified Answers and Responsive Design, an essay by Pritam Pebam."
+    />
+    <title>Google Lens: Unified Answers and Responsive Design · Pritam Pebam</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,0..100;1,17..18,400..700,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/essay/google-lens-and-search/article.css" />
+  </head>
+  <body>
+    <main class="page">
+      <article>
+        <header class="article-header">
+          <h1>Google Lens: Unified Answers and Responsive Design</h1>
+          <time datetime="2026-09-09">September 9, 2026</time>
+        </header>
+
+        <div class="article-body">
+          <p>
+            Google Lens lets people search using an image rather than starting
+            with text. My work covered two related problems: making
+            identification results clearer despite variable recognition
+            quality, and creating a responsive framework that could scale Lens
+            across devices.
+          </p>
+
+          <h2>Unified Answers</h2>
+
+          <p>
+            At the time, Lens surfaced a correct identification answer for only
+            about 15% of queries. Useful information often existed in the
+            results, but it was scattered across multiple components and users
+            could miss it.
+          </p>
+
+          <p>
+            The Unified Answer framework defined what Lens should present as an
+            answer: a title, first-position placement, an image that lets the
+            user verify the identification, and a clear path into Search.
+          </p>
+
+          <p>
+            That transition introduced practical constraints. The Search action
+            needed to remain visible even when the results panel was partially
+            expanded. We chose “Search” over “Learn more” because answer titles
+            averaged roughly 47 characters and commonly wrapped to two lines.
+          </p>
+
+          <p>
+            In prototype research, the design achieved 100% task completion and
+            reported user satisfaction. The work increased the rate at which
+            Lens surfaced correct results by roughly six times and unified four
+            previously separate components.
+          </p>
+
+          <h2>Aqua</h2>
+
+          <p>
+            Lens also needed to expand across larger displays, orientations,
+            and new touchpoints. Aqua established a device-agnostic framework
+            rather than allowing each surface to solve the same structural
+            problems independently.
+          </p>
+
+          <p>
+            A UI audit showed that three primary screen structures represented
+            roughly 90% of the design problems. One key question was how to
+            divide wider screens between the query image and results. I wrote a
+            script to analyze the aspect-ratio distribution of images people
+            were using with Lens, which informed a wider query-image treatment
+            optimized for about 80% of observed images.
+          </p>
+
+          <p>
+            The results panel was bounded between 320dp and 768dp and docked on
+            wider displays. Related grid and breakpoint rules let the experience
+            adapt across phones, tablets, desktop, orientations, and
+            split-screen states.
+          </p>
+
+          <p>
+            Unified Answers created structure around variable recognition
+            quality. Aqua created structure around variable device and surface
+            constraints.
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "slug": "google-ar-design-guidelines",
+  "title": "Developing Google\u2019s Smartphone AR Design Guidelines",
+  "date": "2026-09-09",
+  "excerpt": "Smartphone AR asks people to move through space and recover when tracking fails. Design guidance for environmental uncertainty, placement, movement and recovery.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 35% 35%, #e9eef7 0, transparent 45%), linear-gradient(135deg, #f6f5f2, #eceff3)"
+  },
+  "navigation": "default",
+  "draft": false
+}

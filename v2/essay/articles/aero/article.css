@@ -1,0 +1,374 @@
+/* Presentation for this article only. Nothing here is shared, so edit or
+   replace it without affecting any other essay. */
+
+:root {
+  color-scheme: light;
+  --ink: #111;
+  --muted: #7d7d7d;
+  --page-width: 680px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  font-variation-settings: "GRAD" 60;
+}
+
+.page {
+  width: min(calc(100% - 40px), var(--page-width));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.article-header {
+  margin-bottom: 48px;
+}
+
+.article-header time {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.article-body {
+  max-width: 620px;
+  font-size: 20px;
+  font-weight: 350;
+  line-height: 1.6;
+}
+
+.article-body p {
+  margin: 0 0 1.35em;
+}
+
+/* Each visual is an individual asset lifted out of the source deck rather than
+   a screenshot of a slide, so the captions carry the deck's own wording. */
+.article-body figure {
+  margin: 2.4em 0;
+}
+
+.article-body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #f2f2f5;
+}
+
+.article-body figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* One render set beside its own copy: image on the left, text to its right.
+   Below the breakout width there is no room for two columns, so it stacks. */
+.article-body .split {
+  margin: 2.4em 0;
+}
+
+.article-body .split figure {
+  margin: 0 0 1.35em;
+}
+
+@media (min-width: 1100px) {
+  .article-body .split {
+    display: grid;
+    grid-template-columns: 540px minmax(0, 1fr);
+    gap: 36px;
+    align-items: center;
+  }
+
+  .article-body .split figure {
+    margin: 0;
+  }
+
+  .article-body .split .split-text h2 {
+    margin-top: 0;
+  }
+}
+
+.article-body .grid {
+  display: grid;
+  gap: 16px;
+  margin: 2.4em 0;
+}
+
+.article-body .grid figure {
+  margin: 0;
+}
+
+.article-body .grid figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* Tiles sit straight in the grid rather than in a figure, so they need the
+   same fit-to-column sizing that figure images get. */
+.article-body .grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* minmax(0, 1fr) keeps a track from being floored by its image's natural width. */
+.article-body .grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.article-body .grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* The material studies are a contact sheet, so they stay dense and uncaptioned. */
+.article-body .grid-tiles {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.article-body .grid-tiles img {
+  border-radius: 6px;
+}
+
+/* The aerogel study is one composed block from the deck: two crops sitting
+   flush above a single wide render, carrying the deck's own label inside it.
+   The crops are exported with the frame's corner cut already baked in, so the
+   block clips to the same radius to keep the corners clean. */
+.article-body .aerogel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2.4em 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #1e1e1e;
+}
+
+.article-body .aerogel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  background: none;
+}
+
+.article-body .aerogel-wide {
+  position: relative;
+  grid-column: 1 / -1;
+  container-type: inline-size;
+}
+
+/* Measured in container units so the label keeps its place in the composition
+   whatever width the column ends up at, with px floors so it stays legible on
+   a phone. */
+.article-body .aerogel-label {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 130px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Futura PT", Avenir, "Avenir Next", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@supports (width: 1cqw) {
+  .article-body .aerogel-label {
+    top: 6.67cqw;
+    width: max(78px, 20.9cqw);
+    font-size: max(10px, 2.69cqw);
+  }
+}
+
+/* The banner is one composed slide rather than a single photograph, so the
+   twelve stills and loops are pinned to the deck's own mosaic. Coordinates are
+   percentages of the arrangement's own bounding box, which keeps it intact at
+   any width and lets it sit flush to the banner edges without the slide's
+   black surround. */
+.article-body .mosaic {
+  margin: 2.4em 0;
+}
+
+/* The ratio lives on the frame rather than the figure so the caption keeps its
+   place in normal flow underneath. The slide set its rows 8px apart against
+   6px columns, which read as a loose grid, so every gutter here is 6px. */
+.article-body .mosaic-frame {
+  position: relative;
+  aspect-ratio: 989 / 391;
+}
+
+/* The slide crops its tiles, so each one fills its own box rather than
+   keeping its source ratio. */
+.article-body .mosaic img {
+  position: absolute;
+  border-radius: 6px;
+  object-fit: cover;
+  background: none;
+}
+
+.article-body .mosaic .t-depth-stack {
+  left: 0;
+  top: 0;
+  width: 13.044%;
+  height: 27.621%;
+}
+
+.article-body .mosaic .t-editor-panel {
+  left: 13.65%;
+  top: 0;
+  width: 17.594%;
+  height: 27.621%;
+}
+
+.article-body .mosaic .t-panel-room {
+  left: 31.85%;
+  top: 0;
+  width: 18.301%;
+  height: 27.621%;
+}
+
+.article-body .mosaic .t-earth-panel {
+  left: 50.759%;
+  top: 0;
+  width: 19.211%;
+  height: 32.225%;
+}
+
+.article-body .mosaic .t-messaging-wood {
+  left: 70.475%;
+  top: 0;
+  width: 29.525%;
+  height: 49.232%;
+}
+
+.article-body .mosaic .t-squircle-object {
+  left: 10.819%;
+  top: 29.156%;
+  width: 18.807%;
+  height: 28.389%;
+}
+
+.article-body .mosaic .t-room-panel {
+  left: 30.233%;
+  top: 29.156%;
+  width: 19.919%;
+  height: 28.389%;
+}
+
+.article-body .mosaic .t-photo-wall {
+  left: 50.759%;
+  top: 33.76%;
+  width: 19.11%;
+  height: 27.621%;
+}
+
+.article-body .mosaic .t-icon-grid {
+  left: 21.638%;
+  top: 59.079%;
+  width: 15.774%;
+  height: 28.133%;
+}
+
+.article-body .mosaic .t-wall-panel {
+  left: 38.018%;
+  top: 59.079%;
+  width: 12.235%;
+  height: 31.969%;
+}
+
+.article-body .mosaic .t-video-call {
+  left: 50.759%;
+  top: 62.916%;
+  width: 19.11%;
+  height: 34.084%;
+}
+
+/* Equal halves of the column, split by the same 6px gutter as everything else,
+   which lands the pair flush with the frame top and bottom. */
+.article-body .mosaic .t-messaging-sofa {
+  left: 70.475%;
+  top: 50.768%;
+  width: 29.525%;
+  height: 49.232%;
+}
+
+.article-body .note {
+  margin: -1.2em 0 2.4em;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Landscape renders read poorly at text-column width, so they step outside it
+   once the viewport is wide enough to hold the overhang. This stays last so the
+   overhang survives the block margins declared above. */
+@media (min-width: 1100px) {
+  .article-body .wide {
+    width: 1040px;
+    margin-left: -210px;
+  }
+}
+
+@media (max-width: 700px) {
+  .article-body .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .article-body .grid-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.article-body h2 {
+  margin: 3em 0 0.8em;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 48px;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "google-lens-and-search",
+  "title": "Google Lens: Unified Answers and Responsive Design",
+  "date": "2026-09-09",
+  "excerpt": "Lens surfaced a correct answer for about 15% of queries. Unified Answers gave structure to variable recognition; Aqua gave structure to variable devices.",
+  "hero": {
+    "type": "gradient",
+    "background": "radial-gradient(circle at 35% 35%, #e9eef7 0, transparent 45%), linear-gradient(135deg, #f6f5f2, #eceff3)"
+  },
+  "navigation": "default",
+  "draft": false
+}

@@ -60,8 +60,10 @@ function createFixture(articles, { homeTemplate = HOME_TEMPLATE } = {}) {
   fs.writeFileSync(path.join(root, "favicon.png"), "png");
   fs.writeFileSync(path.join(root, "essay", "index.html"), ESSAY_INDEX_TEMPLATE);
   fs.writeFileSync(path.join(root, "essay", "styles.css"), "/* index */\n");
-  fs.writeFileSync(path.join(root, "essay", "particle-mark.css"), "/* mark */\n");
-  fs.writeFileSync(path.join(root, "essay", "particle-mark.js"), "// mark\n");
+
+  fs.mkdirSync(path.join(root, "shared"), { recursive: true });
+  fs.writeFileSync(path.join(root, "shared", "particle-mark.css"), "/* mark */\n");
+  fs.writeFileSync(path.join(root, "shared", "particle-mark.js"), "// mark\n");
 
   for (const article of articles) {
     const slug = article.slug ?? article.meta?.slug;

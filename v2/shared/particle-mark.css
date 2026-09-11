@@ -1,0 +1,38 @@
+/* The particle mark, owned entirely by this component so home, the essay
+   index, and every article render the same shape in the same colour.
+   Pages may resize the mark and place it; they must not restyle its parts. */
+
+.particle-mark {
+  /* The canvas reads this. Any page setting --accent recolours the mark. */
+  --mark-accent: var(--accent, #2b48e2);
+  display: block;
+  width: 58px;
+  height: 58px;
+  pointer-events: none;
+}
+
+.particle-mark svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.particle-mark canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The essay pages hang the mark from the top of the viewport as a return
+   link. Home places it in the hero instead and needs none of this. */
+.home-mark {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 58px;
+  height: 58px;
+  transform: translateX(-50%);
+}

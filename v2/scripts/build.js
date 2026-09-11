@@ -11,9 +11,12 @@ const {
 const DEFAULT_SOURCE_ROOT = path.join(__dirname, "..");
 const RECENT_LIMIT = 2;
 const SHARED_ROOT_ASSETS = ["favicon.png"];
-const SHARED_ESSAY_ASSETS = ["styles.css", "particle-mark.css", "particle-mark.js"];
-const NAV_STYLESHEET = '<link rel="stylesheet" href="/essay/particle-mark.css" />';
-const NAV_SCRIPT = '<script defer src="/essay/particle-mark.js"></script>';
+const SHARED_ESSAY_ASSETS = ["styles.css"];
+// Site-wide components, served from /shared so home and the essays can both
+// reach them without either owning the other's files.
+const SHARED_COMPONENT_DIR = "shared";
+const NAV_STYLESHEET = '<link rel="stylesheet" href="/shared/particle-mark.css" />';
+const NAV_SCRIPT = '<script defer src="/shared/particle-mark.js"></script>';
 
 function copyFile(from, to) {
   fs.mkdirSync(path.dirname(to), { recursive: true });
@@ -80,6 +83,12 @@ function build({
   for (const asset of SHARED_ROOT_ASSETS) {
     copyFile(path.join(sourceRoot, asset), path.join(outDir, asset));
   }
+
+  fs.cpSync(
+    path.join(sourceRoot, SHARED_COMPONENT_DIR),
+    path.join(outDir, SHARED_COMPONENT_DIR),
+    { recursive: true },
+  );
 
   const homeSource = fs.readFileSync(path.join(sourceRoot, "index.html"), "utf8");
   const home = replaceRegion(

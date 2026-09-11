@@ -4,7 +4,7 @@ const path = require("node:path");
 const test = require("node:test");
 
 const { build } = require("../scripts/build");
-const { resolveReturnTarget } = require("../essay/particle-mark");
+const { OUTLINE_PATH, resolveReturnTarget } = require("../shared/particle-mark");
 const {
   articlePage,
   createFixture,
@@ -58,8 +58,8 @@ test("default articles receive the particle control automatically", () => {
       "utf8",
     );
 
-    assert.match(page, /<link rel="stylesheet" href="\/essay\/particle-mark\.css" \/>/);
-    assert.match(page, /<script defer src="\/essay\/particle-mark\.js"><\/script>/);
+    assert.match(page, /<link rel="stylesheet" href="\/shared\/particle-mark\.css" \/>/);
+    assert.match(page, /<script defer src="\/shared\/particle-mark\.js"><\/script>/);
     assert.ok(
       page.indexOf("particle-mark.js") < page.indexOf("</head>"),
       "the control should be injected inside the head",
@@ -102,7 +102,7 @@ test("injection is idempotent when an article already carries the control", () =
 <html lang="en">
   <head>
     <title>alpha</title>
-    <script defer src="/essay/particle-mark.js"></script>
+    <script defer src="/shared/particle-mark.js"></script>
   </head>
   <body></body>
 </html>
@@ -123,22 +123,38 @@ test("injection is idempotent when an article already carries the control", () =
   }
 });
 
-test("the particle control is isolated to its own component files", () => {
+test("the particle mark lives in exactly one component", () => {
   const styles = fs.readFileSync(
     path.join(SOURCE_ROOT, "essay", "styles.css"),
     "utf8",
   );
   const component = fs.readFileSync(
-    path.join(SOURCE_ROOT, "essay", "particle-mark.css"),
+    path.join(SOURCE_ROOT, "shared", "particle-mark.css"),
     "utf8",
   );
 
   assert.ok(
     !styles.includes(".home-mark") && !styles.includes(".particle-mark"),
-    "index styles must not own the control",
+    "essay styles must not own the control",
   );
+  assert.match(component, /\.particle-mark/);
   assert.match(component, /\.home-mark/);
-  assert.match(component, /\.home-mark \.particle-mark/);
+  assert.match(component, /--mark-accent/, "the colour must come from a token");
+
+  // The shape and the renderer may not be duplicated into any page, or home
+  // and the essays can drift apart again.
+  for (const page of ["index.html", path.join("essay", "index.html")]) {
+    const markup = fs.readFileSync(path.join(SOURCE_ROOT, page), "utf8");
+
+    assert.ok(
+      !markup.includes(OUTLINE_PATH),
+      `${page} must not carry its own copy of the outline`,
+    );
+    assert.ok(
+      !markup.includes("getContext"),
+      `${page} must not draw the mark itself`,
+    );
+  }
 });
 
 test("both real articles are published with working navigation", () => {
@@ -157,11 +173,11 @@ test("both real articles are published with working navigation", () => {
   }
 
   assert.ok(
-    fs.existsSync(path.join(result.outDir, "essay", "particle-mark.js")),
+    fs.existsSync(path.join(result.outDir, "shared", "particle-mark.js")),
     "the shared control must be published",
   );
   assert.ok(
-    fs.existsSync(path.join(result.outDir, "essay", "particle-mark.css")),
+    fs.existsSync(path.join(result.outDir, "shared", "particle-mark.css")),
     "the shared control styles must be published",
   );
 });

@@ -13,6 +13,7 @@ const watchTargets = [
   "index.html",
   "favicon.png",
   "essay",
+  "shared",
   "scripts",
   "server.js",
 ];

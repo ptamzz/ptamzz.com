@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Developing a Typeface for AR Displays, an essay by Pritam Pebam."
+    />
+    <title>Developing a Typeface for AR Displays · Pritam Pebam</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,0..100;1,17..18,400..700,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/essay/meta-wearables-typeface/article.css" />
+  </head>
+  <body>
+    <main class="page">
+      <article>
+        <header class="article-header">
+          <h1>Developing a Typeface for AR Displays</h1>
+          <time datetime="2026-09-09">September 9, 2026</time>
+        </header>
+
+        <div class="article-body">
+          <p>
+            For Meta’s AR wearables, typography could not be evaluated
+            independently from the display. Text that looked clear on a monitor
+            could lose definition on a waveguide display: bright pixels produced
+            halation, apertures closed up, and neighboring strokes could
+            visually merge.
+          </p>
+
+          <h2>From display artifacts to type requirements</h2>
+
+          <p>
+            We evaluated text directly on hardware. A useful reference was that
+            a white pixel could bleed roughly 13 arcminutes of light — enough to
+            alter a glyph at interface text sizes.
+          </p>
+
+          <p>
+            That translated into specific requirements: a taller x-height for
+            perceived size, wider side bearings to reduce merging, wider
+            apertures to keep counters open, and angular cutouts or
+            light-trap-like details where halation could close a shape.
+          </p>
+
+          <p>
+            The important shift was that the font outline was not the final
+            artifact. The rendered letterform on the device was.
+          </p>
+
+          <h2>Developing Iris</h2>
+
+          <p>
+            I led the commissioning of two directions with Dalton Maag.
+            Optimistic Iris adapted Meta’s existing Optimistic typeface for the
+            display. Reality Sans took a more purpose-built approach,
+            prioritizing display performance with less attachment to the
+            existing brand form.
+          </p>
+
+          <p>
+            Testing both made the tradeoff between legibility and identity
+            explicit. We iterated on-device and evaluated the typefaces in real
+            interface contexts.
+          </p>
+
+          <p>
+            Iris ultimately retained the Optimistic lineage while incorporating
+            the display-specific changes identified through testing.
+          </p>
+
+          <h2>Outcome</h2>
+
+          <p>
+            Iris became the system typeface for Meta’s AR wearable displays,
+            including Meta Ray-Ban Display. The project established a direct
+            path from display behavior to typography: measure the artifact,
+            translate it into a type requirement, test it in the letterform,
+            and evaluate it again on hardware.
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
