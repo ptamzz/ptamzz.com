@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Crafting Meta's Design Language for AR, an essay by Pritam Pebam."
+    />
+    <title>Crafting "Aero", Meta's Design Language for AR · Pritam Pebam</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script>
+      (() => {
+        const key = "ptamzz-theme";
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+
+        try {
+          document.documentElement.dataset.theme =
+            localStorage.getItem(key) || systemTheme;
+        } catch {
+          document.documentElement.dataset.theme = systemTheme;
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,0..100;1,17..18,400..700,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/essay/crafting-metas-design-language-for-ar/article.css" />
+  </head>
+  <body>
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch to dark mode"
+      aria-pressed="false"
+    ></button>
+
+    <main class="page">
+      <article>
+        <div class="article-body article-hero-wrap">
+          <figure class="article-teaser wide">
+            <video
+              width="1920"
+              height="1080"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Aero design language teaser"
+            >
+              <source
+                src="/essay/crafting-metas-design-language-for-ar/web-optimized/teaser-1080p.webm"
+                type="video/webm"
+              />
+            </video>
+          </figure>
+        </div>
+
+        <header class="article-header">
+          <h1>Crafting Meta's Design Language for AR</h1>
+          <p class="project-meta">
+            Project Lead&nbsp; · &nbsp;Reality Labs&nbsp; · &nbsp;2023–2024
+          </p>
+        </header>
+
+        <div class="article-body">
+          <p>
+            Orion is Meta's first AR device. The team didn't have any
+            precedence of a design language that works on transparent displays. I
+            assembled a working team to establish the Design
+            Language for AR.
+          </p>
+
+          <figure class="grid grid-tiles material-explorations">
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-01.webp"
+              alt="Frosted slab on a pink field."
+              width="520"
+              height="508"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-02.webp"
+              alt="Clear block with coloured light trapped inside."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-03.webp"
+              alt="Saturated violet cube with soft edges."
+              width="520"
+              height="506"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-04.webp"
+              alt="Matte lavender sphere on a grey ground."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <div class="material-zoom">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-material-05.webp"
+                alt="A cube described only by a lattice of white points, turning against black."
+                width="440"
+                height="428"
+                loading="lazy"
+              />
+            </div>
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-06.webp"
+              alt="Hand holding a frosted squircle tile."
+              width="520"
+              height="506"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-07.webp"
+              alt="Pale blue slab balanced on an open palm."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-08.webp"
+              alt="Dark sphere split by a bright band of light."
+              width="520"
+              height="512"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-09.webp"
+              alt="Sphere lit from within, glowing at the centre."
+              width="520"
+              height="508"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-10.webp"
+              alt="Pale blue cube with a luminous top face."
+              width="520"
+              height="512"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-11.webp"
+              alt="Rounded rectangle tilted in space, faintly iridescent."
+              width="520"
+              height="512"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-12.webp"
+              alt="Small lavender squircle floating against dark grey."
+              width="520"
+              height="508"
+              loading="lazy"
+            />
+            <div class="material-zoom">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-material-13.webp"
+                alt="A faceted solid turning inside a wireframe cube as particles gather beneath it."
+                width="440"
+                height="429"
+                loading="lazy"
+              />
+            </div>
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-14.webp"
+              alt="Irregular soft-bodied blob, faintly pink."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-15.webp"
+              alt="Cube with deep blue light pooling in its lower half."
+              width="520"
+              height="506"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-16.webp"
+              alt="Frosted cube on a grey plane, edges catching light."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-material-17.webp"
+              alt="Muted lavender sphere, almost matte."
+              width="520"
+              height="510"
+              loading="lazy"
+            />
+            <div class="material-zoom">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-material-18.webp"
+                alt="A squircle whose ring of light shifts and pulses against black."
+                width="440"
+                height="428"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Material explorations</figcaption>
+          </figure>
+
+          <h2>Visual Language</h2>
+
+          <blockquote class="press-quote">
+            <p>
+              Aero UI was inspired by aerogel—the world’s lightest,
+              semi-opaque material...
+            </p>
+            <footer>
+              <cite>
+                <a
+                  href="https://www.fastcompany.com/91229358/inside-metas-long-term-vision-to-make-its-orion-glasses-the-airpods-of-augmented-reality"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fast Company
+                </a>
+              </cite>
+            </footer>
+          </blockquote>
+
+
+          <figure class="aerogel-collage">
+            <div class="aerogel-collage-hand">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/images/image1.png"
+                alt="A translucent aerogel block floating above an outstretched hand."
+                width="1400"
+                height="788"
+                loading="lazy"
+              />
+            </div>
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/images/image2.png"
+              alt="An aerogel sample casting spectral bands of light."
+              width="900"
+              height="600"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/images/image3.png"
+              alt="A lightweight aerogel form resting on a feather."
+              width="690"
+              height="460"
+              loading="lazy"
+            />
+            <img
+              class="aerogel-collage-stone"
+              src="/essay/crafting-metas-design-language-for-ar/images/image5.png"
+              alt="A rough aerogel sample standing against a blue and magenta background."
+              width="530"
+              height="530"
+              loading="lazy"
+            />
+            <img
+              class="aerogel-collage-grid"
+              src="/essay/crafting-metas-design-language-for-ar/images/image4.png"
+              alt="A clear aerogel disc casting a long shadow across a blue grid."
+              width="1800"
+              height="1800"
+              loading="lazy"
+            />
+          </figure>
+
+          <p>
+            The material explorations led to the discovery of Aerogel, a versatile material that helps embody our design intent. And thus, aerogel became the material metaphor and
+            <strong>the Aero Design Language</strong> is born.
+          </p>
+
+          <figure class="aerogel">
+            <div class="aerogel-tile">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-aerogel-transparent.webp"
+                alt="A clear aerogel disc resting on an open hand, the fingers fully visible through it."
+                width="620"
+                height="360"
+                loading="lazy"
+              />
+            </div>
+            <div class="aerogel-tile">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-aerogel-semi.webp"
+                alt="A hand behind a frosted aerogel slab, diffused to a soft blue silhouette."
+                width="620"
+                height="360"
+                loading="lazy"
+              />
+            </div>
+            <div class="aerogel-wide">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/images/aero-panel-spectrum.png"
+                alt="Two Aero panels on a dark stage, one nearly invisible and one densely tinted, with graduated dots stepping between them."
+                width="960"
+                height="540"
+                loading="lazy"
+              />
+              <p class="aerogel-label">Visual spectrum of the Aero Panel</p>
+            </div>
+          </figure>
+
+          <figure class="aerogel-app-row">
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/images/image2.webp"
+              alt="A close view of Aero messaging panels floating over a room."
+              width="486"
+              height="334"
+              loading="lazy"
+            />
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/images/image1.webp"
+              alt="Aero messaging panels adapting their material over a dark living room."
+              width="960"
+              height="500"
+              loading="lazy"
+            />
+          </figure>
+
+          <h2>Motion Language</h2>
+
+          <p>
+            Aero motion uses a soft ease-out that alleviates colour break-up
+            artifacts on the display.
+          </p>
+
+          <figure class="motion-exploration-row">
+            <div class="motion-ease-out-frame">
+              <img
+                src="/essay/crafting-metas-design-language-for-ar/aero-motion-ease-out.webp"
+                alt="An Aero panel demonstrating its soft ease-out motion."
+                width="720"
+                height="563"
+                loading="lazy"
+              />
+            </div>
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-motion-panel-entry.webp"
+              alt="A messaging panel entering the scene over a sofa."
+              width="900"
+              height="506"
+              loading="lazy"
+            />
+          </figure>
+
+          <p>
+            Aero panels are materially coupled — motion in one surface
+            influences the rest, helping guide your attention.
+          </p>
+
+          <div class="grid grid-2 motion-behavior-grid">
+            <figure>
+              <div class="motion-image">
+                <video
+                  class="crop-from-left"
+                  width="1842"
+                  height="1296"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Pressing a button on one Aero surface affects the panel behind it"
+                >
+                  <source
+                    src="/essay/crafting-metas-design-language-for-ar/images/cascade_motion.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <figcaption>Pressing the button affects the panel</figcaption>
+            </figure>
+            <figure>
+              <div class="motion-image">
+                <img
+                  src="/essay/crafting-metas-design-language-for-ar/aero-motion-coupled-panel.webp"
+                  alt="A reels-style feed panel where motion pulls the eye down the column."
+                  width="602"
+                  height="542"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Motion helps “guide the eye”</figcaption>
+            </figure>
+          </div>
+
+          <h2>Sound Language</h2>
+
+          <p>
+            Aero audio uses higher-frequency sounds to cut through outdoor
+            ambient noise and remain perceptible.
+          </p>
+
+          <figure>
+            <video
+              width="1280"
+              height="720"
+              controls
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Aero interface sound design walkthrough"
+            >
+              <source src="/essay/crafting-metas-design-language-for-ar/sfx_orion_web.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Aero interface sound design walkthrough</figcaption>
+          </figure>
+
+          <h2>Shipped</h2>
+
+          <figure class="shipped-orion-crop">
+            <img
+              src="/essay/crafting-metas-design-language-for-ar/aero-shipped-orion.webp"
+              alt="Orion’s home surface showing an app launcher over a living room."
+              width="1200"
+              height="1138"
+              loading="lazy"
+            />
+          </figure>
+
+          <p>
+            Aero designs are
+            <a
+              href="https://www.meta.com/emerging-tech/orion/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >shipped with Orion</a
+            >
+            and subsequent wearable display products. The language evolved
+            across generations as display fidelity improved.
+          </p>
+
+          <section class="featured-links">
+            <h2>Media coverage</h2>
+            <div class="link-grid">
+              <a
+                class="link-card"
+                href="https://www.fastcompany.com/91229358/inside-metas-long-term-vision-to-make-its-orion-glasses-the-airpods-of-augmented-reality"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3>
+                  Inside Meta’s long-term vision to make its Orion glasses the
+                  AirPods of augmented reality
+                </h3>
+                <span class="link-source">
+                  <img
+                    src="https://www.fastcompany.com/favicon.ico"
+                    alt=""
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                  />
+                  Fast Company
+                </span>
+              </a>
+              <a
+                class="link-card"
+                href="https://www.wired.com/story/meta-orion-glasses-augmented-reality-mark-zuckerberg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3>
+                  Meta Missed Out on Smartphones. Can Smart Glasses Make Up for
+                  It?
+                </h3>
+                <span class="link-source">
+                  <img
+                    src="https://www.wired.com/favicon.ico"
+                    alt=""
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                  />
+                  WIRED
+                </span>
+              </a>
+              <a
+                class="link-card"
+                href="https://www.nytimes.com/2024/09/25/technology/meta-products-artificial-intelligence.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3>
+                  Meta Unveils New Smart Glasses and Headsets in Pursuit of the
+                  Metaverse
+                </h3>
+                <span class="link-source">
+                  <img
+                    src="https://www.nytimes.com/favicon.ico"
+                    alt=""
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                  />
+                  The New York Times
+                </span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+    <script>
+      (() => {
+        const key = "ptamzz-theme";
+        const root = document.documentElement;
+        const toggle = document.querySelector(".theme-toggle");
+
+        function updateToggle() {
+          const dark = root.dataset.theme === "dark";
+          toggle.setAttribute("aria-pressed", String(dark));
+          toggle.setAttribute(
+            "aria-label",
+            dark ? "Switch to light mode" : "Switch to dark mode",
+          );
+        }
+
+        toggle.addEventListener("click", () => {
+          const theme = root.dataset.theme === "dark" ? "light" : "dark";
+          root.dataset.theme = theme;
+          try {
+            localStorage.setItem(key, theme);
+          } catch {}
+          updateToggle();
+        });
+
+        updateToggle();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,607 @@
+/* Presentation for this article only. Nothing here is shared, so edit or
+   replace it without affecting any other essay. */
+
+:root {
+  color-scheme: light;
+  --ink: #111;
+  --muted: #7d7d7d;
+  --accent: #2b48e2;
+  --background: #fff;
+  --image-background: #f2f2f5;
+  --card-background: #f8f9fd;
+  --card-hover: #fff;
+  --toggle-track: #d9d9de;
+  --toggle-knob: #fff;
+  --toggle-border: rgba(17, 17, 17, 0.12);
+  --page-width: 680px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f3f3f1;
+  --muted: #a5a5a8;
+  --background: #111114;
+  --image-background: #24242a;
+  --card-background: #1b1b20;
+  --card-hover: #24242b;
+  --toggle-track: #414149;
+  --toggle-knob: #f3f3f1;
+  --toggle-border: rgba(255, 255, 255, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  z-index: 10;
+  top: 16px;
+  right: 16px;
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  background: var(--toggle-track);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.theme-toggle::after {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--toggle-knob);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  content: "";
+  transform: translateX(0);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+:root[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(20px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  font-variation-settings: "GRAD" 60;
+}
+
+.page {
+  width: min(calc(100% - 40px), var(--page-width));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.article-header {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.article-header .project-meta {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  white-space: nowrap;
+}
+
+.article-body {
+  max-width: 620px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+.article-body p {
+  margin: 0 0 1.35em;
+}
+
+.article-body strong {
+  font-weight: 450;
+}
+
+/* Each visual is an individual asset lifted out of the source deck rather than
+   a screenshot of a slide, so the captions carry the deck's own wording. */
+.article-body figure {
+  margin: 2.4em 0;
+}
+
+.article-body figure :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: var(--image-background);
+}
+
+.article-body figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.article-body .grid {
+  display: grid;
+  gap: 16px;
+  margin: 2.4em 0;
+}
+
+.article-body .grid figure {
+  margin: 0;
+}
+
+.article-body .grid figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* Tiles sit straight in the grid rather than in a figure, so they need the
+   same fit-to-column sizing that figure images get. */
+.article-body .grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.article-body .motion-exploration-row {
+  display: grid;
+  gap: 16px;
+}
+
+.article-body .motion-ease-out-frame {
+  display: flex;
+  width: 100%;
+  height: min(360px, calc((100vw - 40px) * 0.704));
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #212121;
+}
+
+.article-body .motion-ease-out-frame img {
+  width: auto;
+  max-width: none;
+  height: min(320px, calc((100vw - 40px) * 0.626));
+  flex: none;
+  border-radius: 0;
+  background: none;
+}
+
+.article-body .motion-image {
+  height: min(262px, calc((100vw - 40px) * 0.423));
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.article-body .motion-image :is(img, video) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+  object-fit: cover;
+}
+
+.article-body .motion-image .crop-from-left {
+  object-position: 33% center;
+}
+
+/* minmax(0, 1fr) keeps a track from being floored by its image's natural width. */
+.article-body .grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.article-body .motion-behavior-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.article-body .motion-behavior-grid figure:last-child .motion-image {
+  padding: 12px 14px;
+  background: #2b2a31;
+}
+
+.article-body .motion-behavior-grid figure:last-child .motion-image img {
+  object-fit: contain;
+}
+
+.article-body .grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* The material studies are a contact sheet, so they stay dense. */
+.article-body .grid-tiles {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* The contact sheet is labelled rather than headed. Its caption spans the full
+   row so it never consumes a tile slot, and the grid gap supplies its offset. */
+.article-body .material-explorations figcaption {
+  margin-top: 0;
+  grid-column: 1 / -1;
+}
+
+.article-body .grid-tiles img {
+  border-radius: 16px;
+}
+
+.article-body .grid-tiles .material-zoom {
+  aspect-ratio: 440 / 428;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.article-body .grid-tiles .material-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.4);
+}
+
+/* The aerogel study uses the same spacing and individual tile treatment as the
+   photographic collage above it. */
+.article-body .aerogel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(6px, 0.95vw, 10px);
+  margin: 2.4em 0 0;
+}
+
+.article-body .aerogel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: none;
+}
+
+.article-body .aerogel-tile {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.article-body .aerogel-tile img {
+  border-radius: 0;
+  transform: scale(1.03);
+}
+
+.article-body .aerogel-wide {
+  position: relative;
+  aspect-ratio: 18 / 7;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  border-radius: 12px;
+  container-type: inline-size;
+}
+
+.article-body .aerogel-wide img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 90%;
+}
+
+.article-body .aerogel-app-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(6px, 0.95vw, 10px);
+  margin: clamp(6px, 0.95vw, 10px) 0 2.4em;
+}
+
+.article-body .aerogel-app-row img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Measured in container units so the label keeps its place in the composition
+   whatever width the column ends up at, with px floors so it stays legible on
+   a phone. */
+.article-body .aerogel-label {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  width: 130px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Futura PT", Avenir, "Avenir Next", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@supports (width: 1cqw) {
+  .article-body .aerogel-label {
+    top: 3.89cqw;
+    width: max(78px, 20.9cqw);
+    font-size: max(10px, 2.69cqw);
+  }
+}
+
+.article-body .article-teaser {
+  aspect-ratio: 1024 / 379.598;
+  margin: 0 0 16px;
+  overflow: hidden;
+  border-radius: 44px;
+  background: #000;
+}
+
+.article-body .article-teaser video {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.article-body .press-quote {
+  position: relative;
+  margin: 3.2em 0;
+  padding-top: 34px;
+  padding-left: clamp(18px, 3vw, 24px);
+}
+
+.article-body .press-quote::before {
+  position: absolute;
+  top: -18px;
+  left: -4px;
+  color: #2b48e2;
+  content: "“";
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.article-body .press-quote p {
+  margin: -44px 0 0;
+  font-size: clamp(27px, 5vw, 34px);
+  font-weight: 250;
+  letter-spacing: -0.018em;
+  line-height: 1.28;
+  text-wrap: balance;
+}
+
+.article-body .press-quote footer {
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: "Google Sans", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-body .press-quote cite {
+  font-style: normal;
+}
+
+.article-body .aerogel-collage {
+  display: grid;
+  aspect-ratio: 2 / 1;
+  grid-template-columns: 258fr 351fr 346fr;
+  grid-template-rows: 252fr 194fr;
+  gap: clamp(6px, 0.95vw, 10px);
+}
+
+.article-body .aerogel-collage > img,
+.article-body .aerogel-collage-hand {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.article-body .aerogel-collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.article-body .aerogel-collage-hand img {
+  object-position: 36% center;
+  transform: scale(1.35);
+}
+
+.article-body .aerogel-collage-stone {
+  object-position: 0 90%;
+}
+
+.article-body .aerogel-collage-grid {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+.article-body .shipped-orion-crop {
+  aspect-ratio: 1200 / 759;
+  margin: 0 0 1.35em;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.article-body .shipped-orion-crop img {
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Press coverage of the shipped work, styled to match the recent essay cards
+   on the home page. */
+.article-body .featured-links {
+  margin: 3em 0 3.2em;
+}
+
+.article-body .featured-links h2 {
+  margin-top: 0;
+}
+
+.article-body .link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.article-body .link-card {
+  display: flex;
+  min-height: 60px;
+  flex-direction: column;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background-color: var(--card-background);
+  transition: background-color 140ms ease;
+}
+
+.article-body .link-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Google Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-variation-settings: "GRAD" 0;
+  line-height: 1.35;
+  transition: font-variation-settings 140ms ease;
+}
+
+.article-body .link-card .link-source {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  color: var(--muted);
+  font-family: "Google Sans", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.article-body .link-card .link-source img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  object-fit: contain;
+}
+
+.article-body .link-card:hover h3,
+.article-body .link-card:focus-visible h3 {
+  font-variation-settings: "GRAD" 80;
+}
+
+.article-body .link-card:hover,
+.article-body .link-card:focus-visible {
+  background-color: var(--card-hover);
+}
+
+@media (max-width: 640px) {
+  .article-body .link-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .article-body .link-card {
+    min-height: 0;
+  }
+}
+
+.article-body .note {
+  margin: -1.2em 0 2.4em;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Landscape renders read poorly at text-column width, so they step outside it
+   once the viewport is wide enough to hold the overhang. This stays last so the
+   overhang survives the block margins declared above. */
+@media (min-width: 1100px) {
+  .article-body .wide {
+    width: 1040px;
+    margin-left: -210px;
+  }
+}
+
+@media (max-width: 700px) {
+  .article-body .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .article-body .grid-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.article-body h2 {
+  margin: 3em 0 0.8em;
+  font-size: clamp(27px, 5vw, 34px);
+  font-weight: 350;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .theme-toggle,
+  .theme-toggle::after {
+    transition: none;
+  }
+}
